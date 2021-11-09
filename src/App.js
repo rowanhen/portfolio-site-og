@@ -20,7 +20,7 @@ const PostEffects = () => {
         <Pixelation
           granularity={0} // pixel granularity
         />
-        <DotScreen angle={Math.PI * 2.} scale={1.3} />
+        <DotScreen angle={Math.PI * 2.} scale={4.3} />
       </EffectComposer>
   )
 }

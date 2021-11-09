@@ -11,14 +11,13 @@ import state from './state'
     return (
       <Box dir="column" align={left ? 'flex-start' : 'flex-end'} justify="flex-start" width="100%" height="auto" minHeight="100%">
         <Box marginLeft={1} marginRight={1} marginTop={2}>
-            <Text position={[left ? 1 : -1, 0.5, 1]} fontSize={textScaleFactor} lineHeight={1} letterSpacing={-0.05} maxWidth={(viewport.width / 4) * 3}>
+            <Text position={[left ? 1 : -1, 0.5, 0.5]} fontSize={textScaleFactor} lineHeight={1} letterSpacing={-0.05} maxWidth={(viewport.width / 4) * 3}>
             {tag}
             </Text>
         </Box>
-        <Box marginLeft={left ? 1: 1} marginRight={left ? 1 : 1} marginBottom={1}>
+        <Box marginLeft={left ? 0.7: 0.7} marginRight={left ? 0.7 : 0.7} marginBottom={0.7}>
           <Text
-            bold
-            position-z={0.5}
+            position-z={0.0}
             textAlign={left ? 'left' : 'right'}
             fontSize={1.5 * textScaleFactor}
             lineHeight={1}
@@ -27,12 +26,11 @@ import state from './state'
             {text}
           </Text>
         </Box>
-        <Box marginLeft={left ? 1 : 1} marginRight={left ? 1 : 1} marginBottom={1}>
+        <Box marginLeft={left ? 0.7 : 0.7} marginRight={left ? 0.7 : 0.7} marginBottom={1}>
           <Text
-            bold
-            position-z={0.5}
+            position-z={0.2}
             textAlign={left ? 'left' : 'right'}
-            fontSize={0.3 * textScaleFactor}
+            fontSize={1.0 * textScaleFactor}
             lineHeight={1}
             letterSpacing={-0.05}
             maxWidth={(viewport.width / 4) * 3}>

@@ -103,7 +103,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
 
       float sdf(vec3 p){
         vec3 p1 = rotate(p, vec3(1.0), time/4.0);
-        float box = smin(sdBox(p1, vec3(0.1)), sdSphere(p,0.1), 0.9);
+        float box = smin(sdBox(p1, vec3(0.3)), sdSphere(p,0.1), 0.5);
         float final = mix(box, box, 0.2);
 
 
@@ -118,7 +118,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
 
 
         float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.1);
-        return smin(mouseSphere, box, 0.2);
+        return smin(mouseSphere, box, 0.5);
       }
 
 
@@ -134,7 +134,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
       void main()
       {
         float dist = length(vUv - vec2(0.5));
-        vec3 bg = mix(vec3(0.22), vec3(0.0), dist);
+        vec3 bg = mix(vec3(0.0), vec3(0.0), dist);
         vec2 newUV = (vUv - vec2(0.5))*uResolution.zw + vec2(0.5);
         vec3 camPos = vec3(0.0,0.0,2.0);
         vec3 ray = normalize(vec3( (vUv - vec2(0.5)) * uResolution.zw, -1.0 ));

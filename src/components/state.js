@@ -10,20 +10,16 @@ const state = {
         detail: `Junior Software Engineer & Creative Coder`
       },
       { tag: '01',
-        text: `Projects`,
-        detail: `https://warmm.co.uk\nhttps://vitalstudios.co`
+        text: `Me`,
+        detail: `Fresh Mathematics graduate with a passion for UI/UX development and data visualisation`
       },
       { tag: '02',
         text: `Skills`,
         detail: `Competent React & JS developer specialising in Front-End development`
       },
       { tag: '03',
-        text: `Me`,
-        detail: `Fresh Mathematics graduate with a passion for UI/UX\ndevelopment and data visualisation`
-      },
-      { tag: '',
-        text: ``,
-        detail: ``
+        text: `Projects`,
+        detail: `https://warmm.co.uk\nhttps://vitalstudios.co\nhttps://grens.co.uk`
       },
       { tag: '',
         text: ``,
