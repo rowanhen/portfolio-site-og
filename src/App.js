@@ -70,7 +70,7 @@ export default function App() {
         <PostEffects />
         <Suspense fallback={null}>
             <Content onReflow={setPages} />
-            {/* <Scene /> */}
+            <Scene />
         </Suspense>
       </Canvas>
       <div

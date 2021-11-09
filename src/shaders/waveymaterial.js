@@ -118,7 +118,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
 
 
         float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.1);
-        return smin(mouseSphere, final, 0.2);
+        return smin(mouseSphere, box, 0.2);
       }
 
 
