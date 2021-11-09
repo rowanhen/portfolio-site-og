@@ -134,7 +134,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
       void main()
       {
         float dist = length(vUv - vec2(0.5));
-        vec3 bg = mix(vec3(0.0), vec3(0.0), dist);
+        vec3 bg = mix(vec3(0.22), vec3(0.0), dist);
         vec2 newUV = (vUv - vec2(0.5))*uResolution.zw + vec2(0.5);
         vec3 camPos = vec3(0.0,0.0,2.0);
         vec3 ray = normalize(vec3( (vUv - vec2(0.5)) * uResolution.zw, -1.0 ));
@@ -160,7 +160,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
           color = vec3(diff);
           color = vec3(matcapUV, uColor);
           color = texture2D(uTexture2, matcapUV).rgb;
-          color = vec3(1.0, 0.0, 0.0);
+          // color = vec3(1.0, 0.0, 0.0);
           // float fresnel = 1.0 + 1.0 * pow(1.0 + dot(ray, normal), 3.0);
           // color = mix(color, bg, fresnel);
         }
@@ -173,8 +173,8 @@ class WaveyMaterial extends THREE.ShaderMaterial {
   get time() { return this.uniforms.time.value } // prettier-ignore
   set uColor(v) { this.uniforms.uColor.value = v } // prettier-ignore
   get uColor() { return this.uniforms.uColor.value } // prettier-ignore
-  // set mouse(v) { this.uniforms.mouse.value = v } // prettier-ignore
-  // get mouse() { return this.uniforms.mouse.value } // prettier-ignore
+  set mouse(v) { this.uniforms.mouse.value = v } // prettier-ignore
+  get mouse() { return this.uniforms.mouse.value } // prettier-ignore
 }
 
 // This is the 🔑 that HMR will renew if this file is edited

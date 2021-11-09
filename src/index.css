@@ -12,6 +12,9 @@ body,
 body {
   background: white;
 }
+.artwork {
+  mix-blend-mode: difference;
+}
 
 .scrollArea {
   position: absolute;
