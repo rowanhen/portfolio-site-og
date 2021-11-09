@@ -69,7 +69,7 @@ export default function App() {
       <Canvas shadows className="artwork" >
         <PostEffects />
         <Suspense fallback={null}>
-            <Content onReflow={setPages} />
+            {/* <Content onReflow={setPages} /> */}
             <Scene />
         </Suspense>
       </Canvas>
