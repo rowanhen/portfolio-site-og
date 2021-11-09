@@ -30,14 +30,14 @@ const Wave = ({position, uColor}) => {
     const { width, height } = useThree((state) => state.viewport)
       useFrame((state, delta) => {
       ref.current.time += delta*2
-      if (state.mouse) {
-        document.addEventListener('mousemove', (event) => {
-          ref.current.mouse.x = event.clientX/(state.size.width) - 0.5
-          ref.current.mouse.y = - event.clientY/(state.size.height) + 0.5
-        });
-        // ref.current.mouse.x = state.mouse.x
-        // ref.current.mouse.y = state.mouse.y
-      }
+      // if (state.mouse) {
+      //   document.addEventListener('mousemove', (event) => {
+      //     ref.current.mouse.x = event.clientX/(state.size.width) - 0.5
+      //     ref.current.mouse.y = - event.clientY/(state.size.height) + 0.5
+      //   });
+      //   // ref.current.mouse.x = state.mouse.x
+      //   // ref.current.mouse.y = state.mouse.y
+      // }
       // console.log(state)
     })
     return (

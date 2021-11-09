@@ -173,8 +173,8 @@ class WaveyMaterial extends THREE.ShaderMaterial {
   get time() { return this.uniforms.time.value } // prettier-ignore
   set uColor(v) { this.uniforms.uColor.value = v } // prettier-ignore
   get uColor() { return this.uniforms.uColor.value } // prettier-ignore
-  set mouse(v) { this.uniforms.mouse.value = v } // prettier-ignore
-  get mouse() { return this.uniforms.mouse.value } // prettier-ignore
+  // set mouse(v) { this.uniforms.mouse.value = v } // prettier-ignore
+  // get mouse() { return this.uniforms.mouse.value } // prettier-ignore
 }
 
 // This is the 🔑 that HMR will renew if this file is edited
