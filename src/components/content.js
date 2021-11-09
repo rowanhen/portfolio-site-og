@@ -1,11 +1,9 @@
 import * as THREE from 'three'
-import React, { useRef, useCallback, useLayoutEffect } from 'react'
+import React, { useRef, useCallback } from 'react'
 import { useThree, useFrame } from '@react-three/fiber'
-import { Flex, Box, useFlexSize } from '@react-three/flex'
-import { Html } from '@react-three/drei'
+import { Flex, Box} from '@react-three/flex'
 import Text from './text'
 import state from './state'
-import { Scene } from '../App'
 
 
   function Page({ text, detail, tag, textScaleFactor, left = false }) {

@@ -1,9 +1,8 @@
 import * as THREE from 'three'
 import { Suspense, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Loader, OrbitControls } from '@react-three/drei'
-import { EffectComposer, Noise, HueSaturation, Pixelation, DotScreen, ChromaticAberration  } from '@react-three/postprocessing'
-import { BlendFunction } from 'postprocessing'
+import { Loader } from '@react-three/drei'
+import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
 import { Content } from './components/content'
 import state from './components/state'
@@ -13,7 +12,7 @@ import state from './components/state'
 const PostEffects = () => {
   return (
       <EffectComposer>
-        {/* <Noise opacity={0.1} /> */}
+        {/* <Noise opacity={0.01} /> */}
         <HueSaturation
           hue={0} // hue in radians
           saturation={0.1} // saturation in radians
@@ -21,10 +20,6 @@ const PostEffects = () => {
         <Pixelation
           granularity={0} // pixel granularity
         />
-        {/* <ChromaticAberration
-          blendFunction={BlendFunction.NORMAL} // blend mode
-          offset={[0.001, 0.001]} // color offset
-        /> */}
         <DotScreen angle={Math.PI * 2.} scale={1.3} />
       </EffectComposer>
   )
@@ -65,7 +60,6 @@ export const Scene = () => {
 
 
 export default function App() {
-  const ref = useRef()
   const scrollArea = useRef()
   const onScroll = (e) => (state.top = e.target.scrollTop)
   useEffect(() => void onScroll({ target: scrollArea.current }), [])
@@ -78,7 +72,6 @@ export default function App() {
             <Content onReflow={setPages} />
             <Scene />
         </Suspense>
-        {/* <OrbitControls ref={ref} makeDefault /> */}
       </Canvas>
       <div
         className="scrollArea"
