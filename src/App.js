@@ -9,21 +9,21 @@ import { WaveyMaterial } from './shaders/waveymaterial'
 
 
 
-const PostEffects = () => {
-  return (
-      <EffectComposer>
-        {/* <Noise opacity={0.01} /> */}
-        <HueSaturation
-          hue={0} // hue in radians
-          saturation={0.1} // saturation in radians
-        />
-        <Pixelation
-          granularity={0} // pixel granularity
-        />
-        <DotScreen angle={Math.PI * 2.} scale={1.3} />
-      </EffectComposer>
-  )
-}
+// const PostEffects = () => {
+//   return (
+//       <EffectComposer>
+//         {/* <Noise opacity={0.01} /> */}
+//         <HueSaturation
+//           hue={0} // hue in radians
+//           saturation={0.1} // saturation in radians
+//         />
+//         <Pixelation
+//           granularity={0} // pixel granularity
+//         />
+//         <DotScreen angle={Math.PI * 2.} scale={1.3} />
+//       </EffectComposer>
+//   )
+// }
 
 const Wave = ({position, uColor}) => {
     const ref = useRef()
