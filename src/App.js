@@ -20,7 +20,7 @@ const PostEffects = () => {
         <Pixelation
           granularity={0} // pixel granularity
         />
-        <DotScreen angle={Math.PI * 2.} scale={4.3} />
+        <DotScreen angle={Math.PI * 4.0} scale={4.3} />
       </EffectComposer>
   )
 }
@@ -41,7 +41,7 @@ const Wave = ({position, uColor}) => {
       // console.log(state)
     })
     return (
-      <mesh position={position} frustumCulled={false} scale={[width, height, 1]} >
+      <mesh position={position} frustumCulled={false} scale={[width, height, 1]} onClick={() => console.log("please work")} >
         <planeBufferGeometry args={[1, 1, 128, 128]} />
         <waveyMaterial uColor={uColor} ref={ref} side={THREE.DoubleSide} key={WaveyMaterial.key} />
       </mesh>
@@ -58,8 +58,32 @@ export const Scene = () => {
   )
 }
 
+// function getWindowDimensions() {
+//   const { innerWidth: width, innerHeight: height } = window;
+//   return {
+//     width,
+//     height,
+//   };
+// }
+
+// function useWindowDimensions() {
+//   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+//   useEffect(() => {
+//     function handleResize() {
+//       setWindowDimensions(getWindowDimensions());
+//     }
+
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+
+//   return windowDimensions;
+// }
+
 
 export default function App() {
+  // const { height, width } = useWindowDimensions();
   const scrollArea = useRef()
   const onScroll = (e) => (state.top = e.target.scrollTop)
   useEffect(() => void onScroll({ target: scrollArea.current }), [])
@@ -78,7 +102,11 @@ export default function App() {
         ref={scrollArea}
         onScroll={onScroll}
         onPointerMove={(e) => (state.mouse = [(e.clientX / window.innerWidth) * 2 - 1, (e.clientY / window.innerHeight) * 2 - 1])}>
-        <div style={{ height: `${pages * 100}vh` }} />
+        <div style={{ height: `${pages * 100}vh` }}>
+          {/* <div className="clickable_links">
+            <div style={{ top: `${330 + (width/44)}vh`, height: `${8}vw` }} id="warmm" onClick={() => window.open("https://warmm.co.uk", '_blank').focus()}>hello</div>
+          </div> */}
+        </div>
       </div>
       <Loader />
     </>

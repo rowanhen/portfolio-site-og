@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef, useCallback } from 'react'
 import { useThree, useFrame } from '@react-three/fiber'
-import { Flex, Box} from '@react-three/flex'
+import { Flex, Box } from '@react-three/flex'
 import Text from './text'
 import state from './state'
 
@@ -17,7 +17,7 @@ import state from './state'
         </Box>
         <Box marginLeft={left ? 0.7: 0.7} marginRight={left ? 0.7 : 0.7} marginBottom={0.7}>
           <Text
-            position-z={0.0}
+            position-z={0.2}
             textAlign={left ? 'left' : 'right'}
             fontSize={1.5 * textScaleFactor}
             lineHeight={1}
@@ -28,7 +28,7 @@ import state from './state'
         </Box>
         <Box marginLeft={left ? 0.7 : 0.7} marginRight={left ? 0.7 : 0.7} marginBottom={1}>
           <Text
-            position-z={0.2}
+            position-z={0.0}
             textAlign={left ? 'left' : 'right'}
             fontSize={1.0 * textScaleFactor}
             lineHeight={1}
@@ -36,16 +36,6 @@ import state from './state'
             maxWidth={(viewport.width / 4) * 3}>
             {detail}
           </Text>
-          {/* <Html
-            bold
-            position-z={0.5}
-            textAlign={left ? 'left' : 'right'}
-            fontSize={0.3 * textScaleFactor}
-            lineHeight={1}
-            letterSpacing={-0.05}
-            maxWidth={(viewport.width / 4) * 3}>
-            {detail}
-          </Html> */}
         </Box>
       </Box>
     )
@@ -64,6 +54,7 @@ import state from './state'
     })
     const handleReflow = useCallback((w, h) => onReflow((state.pages = h / viewport.height + 0)), [onReflow, viewport.height])
     const scale = Math.min(1, viewport.width / 16)
+    // console.log(viewport.width)
     return (
       <group ref={group}>
         <Flex dir="column" position={[-viewport.width / 2, viewport.height / 2, 0]} size={[viewport.width, viewport.height, 0]} onReflow={handleReflow}>

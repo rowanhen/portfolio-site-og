@@ -11,23 +11,19 @@ const state = {
       },
       { tag: '01',
         text: `Me`,
-        detail: `Fresh Mathematics graduate with a passion for UI/UX development and data visualisation`
+        detail: `Mathematics graduate with a passion for UI/UX and data visualisation`
       },
       { tag: '02',
         text: `Skills`,
-        detail: `Competent React & JS developer specialising in Front-End development`
+        detail: `Competent React & JS developer specialising in Front-End & Full-Stack`
       },
       { tag: '03',
         text: `Projects`,
-        detail: `https://warmm.co.uk\nhttps://vitalstudios.co\nhttps://grens.co.uk`
-      },
-      { tag: '',
-        text: ``,
-        detail: ``
+        detail: `warmm.co.uk\nvitalstudios.co\nprototype26.netlify.app`
       },
       { tag: '04',
         text: `Contact`,
-        detail: `Email: rwnhnslt@gmail.com\nLinkedIn\nInstagram`
+        detail: `Email: rwnhnslt@gmail.com\nLinkedIn`
       },
     ]
   }

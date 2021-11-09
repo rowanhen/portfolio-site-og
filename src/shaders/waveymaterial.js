@@ -14,7 +14,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
     super({
       uniforms: {
         time: { value: 0 },
-        mouse: { value: new THREE.Vector2(0.4,0.4) },
+        mouse: { value: new THREE.Vector2(-0.2,-0.2) },
         uFrequency: { value: new THREE.Vector2(30, 5) },
         uColor: { value: 0 },
         uTexture: { value: waterTexture },
@@ -117,8 +117,8 @@ class WaveyMaterial extends THREE.ShaderMaterial {
 
 
 
-        float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.1);
-        return smin(mouseSphere, box, 0.5);
+        float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.2);
+        return smin(mouseSphere, box, 0.8);
       }
 
 
