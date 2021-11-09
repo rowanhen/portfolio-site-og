@@ -1,11 +1,11 @@
 import * as THREE from 'three'
-import { Suspense, useRef, useEffect } from 'react'
+import { Suspense, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
 // import { Content } from './components/content'
-import state from './components/state'
+// import state from './components/state'
 
 
 
@@ -60,9 +60,9 @@ export const Scene = () => {
 
 
 export default function App() {
-  const scrollArea = useRef()
-  const onScroll = (e) => (state.top = e.target.scrollTop)
-  useEffect(() => void onScroll({ target: scrollArea.current }), [])
+  // const scrollArea = useRef()
+  // const onScroll = (e) => (state.top = e.target.scrollTop)
+  // useEffect(() => void onScroll({ target: scrollArea.current }), [])
   // const [pages, setPages] = useState(0)
   return (
     <>
