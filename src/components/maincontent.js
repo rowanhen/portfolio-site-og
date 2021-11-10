@@ -24,9 +24,9 @@ export const PageContent = () => {
             <div className="page_01_sectioning">03</div>
             <div className="page_01_title">Projects</div>
             <div className="page_01_detail">
-              <div><a className="href_links" href="https://warmm.co.uk">https://warmm.co.uk</a></div>
-              <div><a className="href_links" href="https://vitalstudios.co">https://vitalstudios.co</a></div>
-              <div><a className="href_links" href="https://prototype26.netlify.app">https://prototype26.netlify.app</a></div>
+                <div><a className="href_links" href="https://warmm.co.uk">https://warmm.co.uk</a></div>
+                <div><a className="href_links" href="https://vitalstudios.co">https://vitalstudios.co</a></div>
+                <div><a className="href_links" href="https://prototype26.netlify.app">https://prototype26.netlify.app</a></div>
             </div>
           </div>
         </Section>
@@ -40,6 +40,11 @@ export const PageContent = () => {
             </div>
           </div>
         </Section>
+        <div className="extras_wrapper">
+            <div className="circle_1"></div>
+            <div className="circle_2"></div>
+            <div className="circle_3"></div>
+        </div>
       </SmoothScroll>
     )
   }

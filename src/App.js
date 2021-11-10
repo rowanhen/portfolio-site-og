@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { Suspense, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
-import { EffectComposer, HueSaturation, Pixelation  } from '@react-three/postprocessing'
+import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
 import { PageContent } from './components/maincontent'
 
@@ -14,13 +14,13 @@ const PostEffects = () => {
       <EffectComposer>
         {/* <Noise opacity={0.01} /> */}
         <HueSaturation
-          hue={0.0} // hue in radians
-          saturation={0.1} // saturation in radians
+          hue={-0.3} // hue in radians
+          saturation={0.3} // saturation in radians
         />
         <Pixelation
           granularity={0} // pixel granularity
         />
-        {/* <DotScreen angle={Math.PI * 4.0} scale={4.3} /> */}
+        <DotScreen angle={Math.PI * 4.0} scale={4.3} />
       </EffectComposer>
   )
 }
@@ -30,7 +30,7 @@ const Wave = ({position, uColor}) => {
       const { width, height } = useThree((state) => state.viewport)
 
       useFrame((state, delta) => {
-      ref.current.time += delta*2
+      ref.current.time += delta
       if (state.mouse) {
         document.addEventListener('mousemove', (event) => {
           ref.current.mouse.x = event.clientX/(state.size.width) - 0.5
@@ -55,7 +55,7 @@ const Wave = ({position, uColor}) => {
 export const Scene = () => {
   return (
     <>
-      <Wave position={[0,0,0]} uColor={0.0} />
+      <Wave position={[0,0,0]} uColor={0.3} />
     </>
   )
 }

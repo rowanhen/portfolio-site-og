@@ -14,7 +14,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
     super({
       uniforms: {
         time: { value: 0 },
-        mouse: { value: new THREE.Vector2(-0.2,-0.2) },
+        mouse: { value: new THREE.Vector2(-0.3,-0.3) },
         uFrequency: { value: new THREE.Vector2(30, 5) },
         uColor: { value: 0 },
         uTexture: { value: waterTexture },
@@ -104,7 +104,8 @@ class WaveyMaterial extends THREE.ShaderMaterial {
       float sdf(vec3 p){
         vec3 p1 = rotate(p, vec3(1.0), time/4.0);
         float box = smin(sdBox(p1, vec3(0.3)), sdSphere(p,0.1), 0.1);
-        float final = mix(box, box, 0.2);
+        float newBox = sdSphere(p - vec3(0.4,0.4, 0.3), 0.2);
+        float final = mix(box, newBox, 0.2);
 
 
         for(float i = 0.0; i < 20.0; i++) {
@@ -115,6 +116,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
           final = smin(final, gotoCenter, 0.2);
         }
 
+        final = smin(box, newBox, 0.2);
 
 
         float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.2);
@@ -160,7 +162,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
           color = vec3(diff);
           color = vec3(matcapUV, uColor);
           color = texture2D(uTexture2, matcapUV).rgb;
-          color = vec3(0.0, 1.0, 0.0);
+          // color = vec3(1.0, 0.0, 0.0);
           // float fresnel = 1.0 + 1.0 * pow(1.0 + dot(ray, normal), 3.0);
           // color = mix(color, bg, fresnel);
         }
