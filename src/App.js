@@ -4,9 +4,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
-import SmoothScroll from './components/smoothscroll/SmoothScroll'
-import Section from './components/section/Section'
-import './styles/pagecontent.css';
+import { PageContent } from './components/maincontent'
 
 
 
@@ -16,7 +14,7 @@ const PostEffects = () => {
       <EffectComposer>
         {/* <Noise opacity={0.01} /> */}
         <HueSaturation
-          hue={0} // hue in radians
+          hue={-0.3} // hue in radians
           saturation={0.1} // saturation in radians
         />
         <Pixelation
@@ -59,48 +57,6 @@ export const Scene = () => {
     <>
       <Wave position={[0,0,0]} uColor={0.0} />
     </>
-  )
-}
-
-const PageContent = () => {
-  return (
-    <SmoothScroll>
-      <Section flexDirection="row">
-        <div className="page_01_wrapper">
-          <div className="page_01_sectioning">01</div>
-          <div className="page_01_title">Rowan Henseleit</div>
-          <div className="page_01_detail">Junior Software Engineer & Creative Coder</div>
-        </div>
-      </Section>
-      <Section flexDirection="row-reverse">
-        <div className="page_01_wrapper">
-          <div className="page_01_sectioning">02</div>
-          <div className="page_01_title">Skills</div>
-          <div className="page_01_detail">Competent React & JS Developer specialising in Front-End Development</div>
-        </div>
-      </Section>
-      <Section flexDirection="row">
-        <div className="page_01_wrapper">
-          <div className="page_01_sectioning">03</div>
-          <div className="page_01_title">Projects</div>
-          <div className="page_01_detail">
-            <div onClick={() => window.open("https://warmm.co.uk", "_blank").focus()}>https://warmm.co.uk</div>
-            <div onClick={() => window.open("https://vitalstudios.co", "_blank").focus()}>https://vitalstudios.co</div>
-            <div onClick={() => window.open("https://prototype26.netlify.app", "_blank").focus()}>https://prototype26.netlify.app</div>
-          </div>
-        </div>
-      </Section>
-      <Section flexDirection="row-reverse">
-        <div className="page_01_wrapper">
-          <div className="page_01_sectioning">04</div>
-          <div className="page_01_title">Contact</div>
-          <div className="page_01_detail">
-            <div onClick={() => window.open("https://warmm.co.uk", "_blank").focus()}>Email: rwnhnslt@gmail.com</div>
-            <div onClick={() => window.open("https://www.linkedin.com/in/rowan-henseleit/", "_blank").focus()}>LinkedIn</div>
-          </div>
-        </div>
-      </Section>
-    </SmoothScroll>
   )
 }
 
