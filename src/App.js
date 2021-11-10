@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { Suspense, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
-import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
+import { EffectComposer, HueSaturation, Pixelation  } from '@react-three/postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
 import { PageContent } from './components/maincontent'
 
