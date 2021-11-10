@@ -6,42 +6,17 @@ body,
   width: 100vw;
   height: 100vh;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
   background: white;
 }
 .artwork {
-  mix-blend-mode: difference;
-}
-
-
-/* .clickable_links {
-  position: absolute;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-} */
-
-/* #warmm {
-  position: absolute;
-  top: 410%;
-  color: black;
-  width: 100%;
-  text-decoration: none;
-  background-color: red;
-} */
-
-.scrollArea {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: auto;
-  color: white;
+  /* mix-blend-mode: difference; */
+  position: fixed;
 }
 
 .loading {

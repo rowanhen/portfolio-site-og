@@ -1,11 +1,13 @@
 import * as THREE from 'three'
-import { Suspense, useRef, useState, useEffect } from 'react'
+import { Suspense, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
 import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
-import { Content } from './components/content'
-import state from './components/state'
+import SmoothScroll from './components/smoothscroll/SmoothScroll'
+import Section from './components/section/Section'
+import './styles/pagecontent.css';
+
 
 
 
@@ -26,8 +28,9 @@ const PostEffects = () => {
 }
 
 const Wave = ({position, uColor}) => {
-    const ref = useRef()
-    const { width, height } = useThree((state) => state.viewport)
+      const ref = useRef()
+      const { width, height } = useThree((state) => state.viewport)
+
       useFrame((state, delta) => {
       ref.current.time += delta*2
       if (state.mouse) {
@@ -35,10 +38,13 @@ const Wave = ({position, uColor}) => {
           ref.current.mouse.x = event.clientX/(state.size.width) - 0.5
           ref.current.mouse.y = - event.clientY/(state.size.height) + 0.5
         });
-        // ref.current.mouse.x = state.mouse.x
-        // ref.current.mouse.y = state.mouse.y
       }
-      // console.log(state)
+      document.addEventListener('touchmove', (event) => {
+        var x = event.touches[0].clientX/(state.size.width) - 0.5;
+        var y =  - event.touches[0].clientY/(state.size.height) + 0.5;
+        ref.current.mouse.x = x
+        ref.current.mouse.y = y
+      });
     })
     return (
       <mesh position={position} frustumCulled={false} scale={[width, height, 1]} onClick={() => console.log("please work")} >
@@ -48,8 +54,6 @@ const Wave = ({position, uColor}) => {
     );
 }
 
-//TODO: create loop or map to create Wave component with random color/texture and also random positioning of gotocentre blobs
-
 export const Scene = () => {
   return (
     <>
@@ -58,55 +62,59 @@ export const Scene = () => {
   )
 }
 
-// function getWindowDimensions() {
-//   const { innerWidth: width, innerHeight: height } = window;
-//   return {
-//     width,
-//     height,
-//   };
-// }
-
-// function useWindowDimensions() {
-//   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-//   useEffect(() => {
-//     function handleResize() {
-//       setWindowDimensions(getWindowDimensions());
-//     }
-
-//     window.addEventListener('resize', handleResize);
-//     return () => window.removeEventListener('resize', handleResize);
-//   }, []);
-
-//   return windowDimensions;
-// }
-
+const PageContent = () => {
+  return (
+    <SmoothScroll>
+      <Section flexDirection="row">
+        <div className="page_01_wrapper">
+          <div className="page_01_sectioning">01</div>
+          <div className="page_01_title">Rowan Henseleit</div>
+          <div className="page_01_detail">Junior Software Engineer & Creative Coder</div>
+        </div>
+      </Section>
+      <Section flexDirection="row-reverse">
+        <div className="page_01_wrapper">
+          <div className="page_01_sectioning">02</div>
+          <div className="page_01_title">Skills</div>
+          <div className="page_01_detail">Competent React & JS Developer specialising in Front-End Development</div>
+        </div>
+      </Section>
+      <Section flexDirection="row">
+        <div className="page_01_wrapper">
+          <div className="page_01_sectioning">03</div>
+          <div className="page_01_title">Projects</div>
+          <div className="page_01_detail">
+            <div onClick={() => window.open("https://warmm.co.uk", "_blank").focus()}>https://warmm.co.uk</div>
+            <div onClick={() => window.open("https://vitalstudios.co", "_blank").focus()}>https://vitalstudios.co</div>
+            <div onClick={() => window.open("https://prototype26.netlify.app", "_blank").focus()}>https://prototype26.netlify.app</div>
+          </div>
+        </div>
+      </Section>
+      <Section flexDirection="row-reverse">
+        <div className="page_01_wrapper">
+          <div className="page_01_sectioning">04</div>
+          <div className="page_01_title">Contact</div>
+          <div className="page_01_detail">
+            <div onClick={() => window.open("https://warmm.co.uk", "_blank").focus()}>Email: rwnhnslt@gmail.com</div>
+            <div onClick={() => window.open("https://www.linkedin.com/in/rowan-henseleit/", "_blank").focus()}>LinkedIn</div>
+          </div>
+        </div>
+      </Section>
+    </SmoothScroll>
+  )
+}
 
 export default function App() {
-  // const { height, width } = useWindowDimensions();
-  const scrollArea = useRef()
-  const onScroll = (e) => (state.top = e.target.scrollTop)
-  useEffect(() => void onScroll({ target: scrollArea.current }), [])
-  const [pages, setPages] = useState(0)
   return (
     <>
-      <Canvas shadows className="artwork" >
+      <PageContent />
+      <div className="artwork">
+      <Canvas shadows >
         <PostEffects />
         <Suspense fallback={null}>
-            <Content onReflow={setPages} />
             <Scene />
         </Suspense>
       </Canvas>
-      <div
-        className="scrollArea"
-        ref={scrollArea}
-        onScroll={onScroll}
-        onPointerMove={(e) => (state.mouse = [(e.clientX / window.innerWidth) * 2 - 1, (e.clientY / window.innerHeight) * 2 - 1])}>
-        <div style={{ height: `${pages * 100}vh` }}>
-          {/* <div className="clickable_links">
-            <div style={{ top: `${330 + (width/44)}vh`, height: `${8}vw` }} id="warmm" onClick={() => window.open("https://warmm.co.uk", '_blank').focus()}>hello</div>
-          </div> */}
-        </div>
       </div>
       <Loader />
     </>

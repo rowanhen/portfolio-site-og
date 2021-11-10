@@ -103,7 +103,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
 
       float sdf(vec3 p){
         vec3 p1 = rotate(p, vec3(1.0), time/4.0);
-        float box = smin(sdBox(p1, vec3(0.3)), sdSphere(p,0.1), 0.5);
+        float box = smin(sdBox(p1, vec3(0.3)), sdSphere(p,0.1), 0.1);
         float final = mix(box, box, 0.2);
 
 
