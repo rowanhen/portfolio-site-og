@@ -14,13 +14,13 @@ const PostEffects = () => {
       <EffectComposer>
         {/* <Noise opacity={0.01} /> */}
         <HueSaturation
-          hue={-0.3} // hue in radians
+          hue={0.0} // hue in radians
           saturation={0.1} // saturation in radians
         />
         <Pixelation
           granularity={0} // pixel granularity
         />
-        <DotScreen angle={Math.PI * 4.0} scale={4.3} />
+        {/* <DotScreen angle={Math.PI * 4.0} scale={4.3} /> */}
       </EffectComposer>
   )
 }

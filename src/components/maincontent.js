@@ -16,7 +16,7 @@ export const PageContent = () => {
           <div className="page_01_wrapper">
             <div className="page_01_sectioning">02</div>
             <div className="page_01_title">Skills</div>
-            <div className="page_01_detail">Competent React & JS Developer specialising in Front-End Development</div>
+            <div className="page_01_detail">React & JS Developer specialising in Front-End Development</div>
           </div>
         </Section>
         <Section flexDirection="row">
