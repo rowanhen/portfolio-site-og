@@ -52,12 +52,9 @@ const PageText = () => {
 export const PageContent = () => {
     return (
       <>
-        {window.innerWidth > 1000 ? 
           <SmoothScroll>
             <PageText />
-          </SmoothScroll> : 
-          <PageText />
-        }
+          </SmoothScroll>
       </>
     )
   }
