@@ -14,7 +14,7 @@ class WaveyMaterial extends THREE.ShaderMaterial {
     super({
       uniforms: {
         time: { value: 0 },
-        mouse: { value: new THREE.Vector2(-0.3,-0.3) },
+        mouse: { value: new THREE.Vector2(0.2,0.2) },
         uFrequency: { value: new THREE.Vector2(30, 5) },
         uColor: { value: 0 },
         uTexture: { value: waterTexture },
@@ -157,11 +157,11 @@ class WaveyMaterial extends THREE.ShaderMaterial {
           color = vec3(1.0);
           vec3 normal = calcNormal(pos);
           color = normal;
-          float diff = dot(vec3(1.0), normal);
+          float diff = dot(vec3(0.7), normal);
           vec2 matcapUV = getMatcap(ray, normal);
           color = vec3(diff);
-          color = vec3(matcapUV, uColor);
-          color = texture2D(uTexture2, matcapUV).rgb;
+          // color = vec3(matcapUV, uColor);
+          // color = texture2D(uTexture2, matcapUV).rgb;
           // color = vec3(1.0, 0.0, 0.0);
           // float fresnel = 1.0 + 1.0 * pow(1.0 + dot(ray, normal), 3.0);
           // color = mix(color, bg, fresnel);
