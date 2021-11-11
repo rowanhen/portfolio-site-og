@@ -37,6 +37,7 @@ const PageText = () => {
           <div className="page_01_detail">
             <div>Email: rwnhnslt@gmail.com</div>
             <div><a className="href_links" href="https://www.linkedin.com/in/rowan-henseleit/">LinkedIn</a></div>
+            <div><a className="href_links" href="https://github.com/rowanhen">GitHub</a></div>
             </div>
         </div>
       </Section>

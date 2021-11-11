@@ -2,7 +2,8 @@ import * as THREE from 'three'
 import { Suspense, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Loader } from '@react-three/drei'
-import { EffectComposer, HueSaturation, Pixelation, DotScreen  } from '@react-three/postprocessing'
+import { EffectComposer, HueSaturation, DotScreen, ChromaticAberration } from '@react-three/postprocessing'
+import { BlendFunction } from 'postprocessing'
 import { WaveyMaterial } from './shaders/waveymaterial'
 import { PageContent } from './components/maincontent'
 
@@ -14,13 +15,14 @@ const PostEffects = () => {
       <EffectComposer>
         {/* <Noise opacity={0.01} /> */}
         <HueSaturation
-          hue={-0.3} // hue in radians
-          saturation={0.3} // saturation in radians
+          hue={0.0} // hue in radians
+          saturation={0.0} // saturation in radians
         />
-        <Pixelation
-          granularity={0} // pixel granularity
+        <DotScreen angle={Math.PI * 4.0} scale={10.0} />
+        <ChromaticAberration
+          blendFunction={BlendFunction.NORMAL} // blend mode
+          offset={[0.41, 0.41]} // color offset
         />
-        <DotScreen angle={Math.PI * 4.0} scale={4.3} />
       </EffectComposer>
   )
 }

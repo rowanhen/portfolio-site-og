@@ -102,25 +102,25 @@ class WaveyMaterial extends THREE.ShaderMaterial {
       }
 
       float sdf(vec3 p){
-        vec3 p1 = rotate(p, vec3(1.0), time/4.0);
+        vec3 p1 = rotate(p, vec3(1.0), time/8.0);
         float box = smin(sdBox(p1, vec3(0.3)), sdSphere(p,0.1), 0.1);
         float newBox = sdSphere(p - vec3(0.4,0.4, 0.3), 0.2);
         float final = mix(box, newBox, 0.2);
 
 
-        for(float i = 0.0; i < 20.0; i++) {
+        for(float i = 0.0; i < 5.0; i++) {
           float randOffset = rand(vec2(i, 0.0)); 
           float progr = 1.1 - fract(time/12.0 + randOffset*4.0);
           vec3 pos = vec3(sin(randOffset*4.0*PI), cos(randOffset*4.0*PI), 0.);
           float gotoCenter = sdSphere(p - pos * progr, 0.1*sin(PI*progr));
-          final = smin(final, gotoCenter, 0.2);
+          final = smin(final, gotoCenter, 0.4);
         }
 
-        final = smin(box, newBox, 0.2);
+        // final = smin(box, newBox, 0.2);
 
 
-        float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.2);
-        return smin(mouseSphere, box, 0.8);
+        float mouseSphere = sdSphere(p - vec3(mouse*uResolution.zw*2.0, 0.0), 0.1);
+        return smin(mouseSphere, box, 0.6);
       }
 
 
@@ -156,13 +156,13 @@ class WaveyMaterial extends THREE.ShaderMaterial {
           vec3 pos = camPos + t*ray;
           color = vec3(1.0);
           vec3 normal = calcNormal(pos);
-          color = normal;
+          // color = normal;
           float diff = dot(vec3(1.0), normal);
           vec2 matcapUV = getMatcap(ray, normal);
           color = vec3(diff);
-          color = vec3(matcapUV, uColor);
-          color = texture2D(uTexture2, matcapUV).rgb;
-          // color = vec3(1.0, 0.0, 0.0);
+          // color = vec3(matcapUV, uColor);
+          // color = texture2D(uTexture2, matcapUV).rgb;
+          // color = vec3(1.0, 1.0, 1.0);
           // float fresnel = 1.0 + 1.0 * pow(1.0 + dot(ray, normal), 3.0);
           // color = mix(color, bg, fresnel);
         }
