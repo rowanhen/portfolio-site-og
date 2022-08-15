@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Loader } from '@react-three/drei';
-import { CubeMaterial } from './shaders/CubeMaterial';
 import { PageContent } from './components/maincontent';
 import { NoiseMaterial } from './shaders/NoiseMaterial';
 import { AsciiRenderer } from './shaders/AsciiRenderer';
