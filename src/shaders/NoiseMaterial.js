@@ -8,7 +8,7 @@ const NoiseMaterial = shaderMaterial(
     uTime: 0,
     uColorStart: new THREE.Color('#505050'),
     uColorEnd: new THREE.Color('red'),
-    uMouse: { value: new THREE.Vector2(0.0, 0.0) },
+    uMouse: { value: new THREE.Vector2(0.5, 0.5) },
     uFrequency: { value: new THREE.Vector2(30, 5) },
     uColor: { value: 0 },
     uResolution: { value: new THREE.Vector4(1, 1, 1, 1) },

@@ -24,6 +24,7 @@ const Wave = ({ position, uColor }) => {
         ref.current.uMouse.y = -event.clientY / state.size.height + 0.5;
       });
     }
+
     document.addEventListener('touchmove', (event) => {
       const x = event.touches[0].clientX / state.size.width - 0.5;
       const y = -event.touches[0].clientY / state.size.height + 0.5;
@@ -31,7 +32,6 @@ const Wave = ({ position, uColor }) => {
       ref.current.uMouse.y = y;
     });
   });
-  console.log(windowSize);
   return (
     <mesh position={position} frustumCulled={false} scale={[width, height, 1]}>
       <planeBufferGeometry args={[1, 1, 128, 128]} />

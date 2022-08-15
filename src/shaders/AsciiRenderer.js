@@ -16,8 +16,8 @@ export function AsciiRenderer({
     effect.domElement.style.position = 'absolute';
     effect.domElement.style.top = '0px';
     effect.domElement.style.left = '0px';
-    effect.domElement.style.color = 'yellow';
-    effect.domElement.style.backgroundColor = 'blue';
+    effect.domElement.style.color = 'white';
+    effect.domElement.style.backgroundColor = '#003cff';
     effect.domElement.style.pointerEvents = 'none';
     return effect;
   }, [characters, gl, options]);

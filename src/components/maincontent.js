@@ -1,20 +1,77 @@
 import SmoothScroll from './smoothscroll/SmoothScroll';
 import Section from './section/Section';
 import '../styles/pagecontent.css';
+import AnimatedText from './AnimatedText';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import useWindowSize from '../hooks/useWindowSize';
+
+const StyledPageWrapper = styled(motion.span)`
+  user-select: none;
+  mix-blend-mode: difference;
+  display: inline-block;
+  margin-top: 100px;
+`;
+
+const sectionOne = [
+  { text: '<01>', className: 'page_01_sectioning' },
+  {
+    text: 'Rowan Henseleit',
+    className: 'page_01_title',
+  },
+  {
+    text: 'Software Engineer & Creative Coder',
+    className: 'page_01_detail',
+  },
+];
+
+const sectionOneMobile = [
+  { text: '<01>', className: 'page_01_sectioning' },
+  {
+    text: 'Rowan',
+    className: 'page_01_title',
+  },
+  {
+    text: 'Henseleit',
+    className: 'page_01_title',
+  },
+  {
+    text: 'Software Engineer & Creative',
+    className: 'page_01_detail',
+  },
+  {
+    text: 'Coder',
+    className: 'page_01_detail',
+  },
+];
+
+const container = {
+  visible: {
+    transition: {
+      staggerChildren: 0.0,
+    },
+  },
+};
 
 const PageText = () => {
+  const windowSize = useWindowSize();
   return (
     <>
       <Section flexDirection="row">
-        <div className="page_01_wrapper">
-          <div className="page_01_sectioning">
-            {'<'}01{'>'}
-          </div>
-          <div className="page_01_title">Rowan Henseleit</div>
-          <div className="page_01_detail">
-            Software Engineer & Creative Coder
-          </div>
-        </div>
+        <StyledPageWrapper
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2 }}
+          variants={container}
+        >
+          {windowSize.width > 1000
+            ? sectionOne.map((item, index) => {
+                return <AnimatedText {...item} key={index} />;
+              })
+            : sectionOneMobile.map((item, index) => {
+                return <AnimatedText {...item} key={index} />;
+              })}
+        </StyledPageWrapper>
       </Section>
       <Section flexDirection="row-reverse">
         <div className="page_01_wrapper">
