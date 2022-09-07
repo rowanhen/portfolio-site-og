@@ -2,8 +2,9 @@ import * as THREE from 'three';
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Loader } from '@react-three/drei';
-import { PageContent } from './components/maincontent';
+import { PageContent } from './components/MainContent';
 import { NoiseMaterial } from './shaders/NoiseMaterial';
+import { CubeMaterial } from './shaders/CubeMaterial';
 import { AsciiRenderer } from './shaders/AsciiRenderer';
 import useWindowSize from './hooks/useWindowSize';
 
@@ -74,8 +75,7 @@ export const Scene = () => {
 export default function App() {
   return (
     <>
-      <PageContent />
-      <div className="artwork">
+      <div className="canvasContainer">
         <Canvas shadows>
           <Suspense fallback={null}>
             <Scene />
@@ -83,6 +83,7 @@ export default function App() {
           </Suspense>
         </Canvas>
       </div>
+      <PageContent />
       <Loader />
     </>
   );

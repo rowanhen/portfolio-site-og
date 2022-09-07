@@ -2,9 +2,14 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useMemo } from 'react';
 import { AsciiEffect } from './AsciiEffect';
 
+const chaos =
+  '_¬░█▄▀▀▁▂▃▄▅▆▇█▰▱═║╒╪╫╬■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯▰▱○◌◍◎●◐◑◒◓◔◕◖◗◘◙◚◛◜◝◞◟◠◡◢◣◤◥◦◧◨◩◪◫◬◭◮◯◰◱◲◳◴◵◶◷◸◹◺◻◼◿░▒▓█▄▀!#$%&()*+,-./0123456789:;×✕✖⨉⨯ ';
+
+const lines = ' _____';
+
 export function AsciiRenderer({
   renderIndex = 1,
-  characters = ' _____',
+  characters = chaos,
   ...options
 }) {
   // Reactive state
@@ -13,12 +18,13 @@ export function AsciiRenderer({
   // Create effect
   const effect = useMemo(() => {
     const effect = new AsciiEffect(gl, characters, options);
-    effect.domElement.style.position = 'absolute';
+    effect.domElement.style.position = 'fixed';
     effect.domElement.style.top = '0px';
     effect.domElement.style.left = '0px';
-    effect.domElement.style.color = 'white';
+    effect.domElement.style.color = '#0011ff';
     effect.domElement.style.backgroundColor = '#003cff';
     effect.domElement.style.pointerEvents = 'none';
+    effect.domElement.style.zIndex = '-1';
     return effect;
   }, [characters, gl, options]);
 

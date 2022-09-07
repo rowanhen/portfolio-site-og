@@ -1,14 +1,4 @@
 @media screen and (min-width: 801px) {
-  .parent {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    mix-blend-mode: difference;
-  }
-
   .section {
     display: flex;
     justify-content: flex-start;
@@ -16,11 +6,12 @@
     align-items: center;
     width: 100%;
     height: 100vh;
+    scroll-behavior: smooth;
   }
 
   .page_01_wrapper {
     user-select: none;
-    mix-blend-mode: difference;
+    color: #ffbf00;
   }
 
   .page_01_sectioning {
@@ -39,14 +30,14 @@
   }
 
   .href_links {
-    color: white;
+    color: #ffbf00;
     text-decoration: none;
     transition: 1s;
   }
 
   .href_links:hover {
-    color: white;
-    background-color: white;
+    color: #ffbf00;
+    background-color: #ffbf00;
   }
 
   .extras_wrapper {
@@ -57,46 +48,9 @@
     height: 100%;
     z-index: -1;
   }
-  .circle_1 {
-    position: absolute;
-    left: -30%;
-    top: 90vh;
-    background-color: white;
-    width: 100%;
-    height: 10%;
-    border-radius: 100%;
-  }
-  .circle_2 {
-    position: absolute;
-    right: -10%;
-    top: 190vh;
-    background-color: white;
-    width: 80%;
-    height: 10%;
-    border-radius: 100%;
-  }
-  .circle_3 {
-    position: absolute;
-    left: -25%;
-    top: 300vh;
-    width: 150%;
-    height: 30%;
-    background: white;
-    border-radius: 100%;
-  }
 }
 
 @media screen and (max-width: 800px) {
-  .parent {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    mix-blend-mode: difference;
-  }
-
   .section {
     display: flex;
     justify-content: flex-start;
@@ -108,7 +62,7 @@
 
   .page_01_wrapper {
     user-select: none;
-    mix-blend-mode: difference;
+    color: #ffbf00;
   }
 
   .page_01_sectioning {
@@ -127,14 +81,14 @@
   }
 
   .href_links {
-    color: white;
+    color: #ffbf00;
     text-decoration: none;
     transition: 1s;
   }
 
   .href_links:hover {
-    color: white;
-    background-color: white;
+    color: #ffbf00;
+    background-color: #ffbf00;
   }
 
   .extras_wrapper {
@@ -144,32 +98,5 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-  }
-  .circle_1 {
-    position: absolute;
-    left: -30%;
-    top: 90vh;
-    background-color: white;
-    width: 100%;
-    height: 10%;
-    border-radius: 100%;
-  }
-  .circle_2 {
-    position: absolute;
-    right: -30%;
-    top: 175vh;
-    background-color: white;
-    width: 100%;
-    height: 10%;
-    border-radius: 100%;
-  }
-  .circle_3 {
-    position: absolute;
-    left: -50%;
-    top: 300vh;
-    width: 200%;
-    height: 30%;
-    background: white;
-    border-radius: 100%;
   }
 }

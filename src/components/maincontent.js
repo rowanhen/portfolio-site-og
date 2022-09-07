@@ -1,4 +1,3 @@
-import SmoothScroll from './smoothscroll/SmoothScroll';
 import Section from './section/Section';
 import '../styles/pagecontent.css';
 import AnimatedText from './AnimatedText';
@@ -8,8 +7,8 @@ import useWindowSize from '../hooks/useWindowSize';
 
 const StyledPageWrapper = styled(motion.span)`
   user-select: none;
-  mix-blend-mode: difference;
   display: inline-block;
+  color: #ffbf00;
   margin-top: 100px;
 `;
 
@@ -138,11 +137,5 @@ const PageText = () => {
 };
 
 export const PageContent = () => {
-  return (
-    <>
-      <SmoothScroll>
-        <PageText />
-      </SmoothScroll>
-    </>
-  );
+  return <PageText />;
 };
