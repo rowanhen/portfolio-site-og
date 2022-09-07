@@ -12,6 +12,7 @@
   .page_01_wrapper {
     user-select: none;
     color: #ffbf00;
+    opacity: 0.9;
   }
 
   .page_01_sectioning {
@@ -31,12 +32,15 @@
 
   .href_links {
     color: #ffbf00;
+    opacity: 0.9;
+
     text-decoration: none;
     transition: 1s;
   }
 
   .href_links:hover {
     color: #ffbf00;
+    opacity: 0.9;
     background-color: #ffbf00;
   }
 
@@ -63,6 +67,7 @@
   .page_01_wrapper {
     user-select: none;
     color: #ffbf00;
+    opacity: 0.9;
   }
 
   .page_01_sectioning {
@@ -82,12 +87,16 @@
 
   .href_links {
     color: #ffbf00;
+    opacity: 0.9;
+
     text-decoration: none;
     transition: 1s;
   }
 
   .href_links:hover {
     color: #ffbf00;
+    opacity: 0.9;
+
     background-color: #ffbf00;
   }
 
