@@ -9,7 +9,6 @@ const StyledPageWrapper = styled(motion.span)`
   user-select: none;
   display: inline-block;
   color: #ffbf00;
-  mix-color-blend-mode: difference;
   margin-top: 100px;
 `;
 
