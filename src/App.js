@@ -4,7 +4,6 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Loader } from '@react-three/drei';
 import { PageContent } from './components/MainContent';
 import { NoiseMaterial } from './shaders/NoiseMaterial';
-import { CubeMaterial } from './shaders/CubeMaterial';
 import { AsciiRenderer } from './shaders/AsciiRenderer';
 import useWindowSize from './hooks/useWindowSize';
 

@@ -5,7 +5,7 @@ import { AsciiEffect } from './AsciiEffect';
 const chaos =
   '_¬░█▄▀▀▁▂▃▄▅▆▇█▰▱═║╒╪╫╬■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯▰▱○◌◍◎●◐◑◒◓◔◕◖◗◘◙◚◛◜◝◞◟◠◡◢◣◤◥◦◧◨◩◪◫◬◭◮◯◰◱◲◳◴◵◶◷◸◹◺◻◼◿░▒▓█▄▀!#$%&()*+,-./0123456789:;×✕✖⨉⨯ ';
 
-const lines = ' _____';
+// const lines = ' _____';
 
 export function AsciiRenderer({
   renderIndex = 1,
