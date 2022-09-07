@@ -1,4 +1,4 @@
-import Section from './section/Section';
+import Section from './Section';
 import '../styles/pagecontent.css';
 import AnimatedText from './AnimatedText';
 import { motion } from 'framer-motion';

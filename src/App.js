@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Loader } from '@react-three/drei';
-import { PageContent } from './components/MainContent';
+import { PageContent } from './components/Content';
 import { NoiseMaterial } from './shaders/NoiseMaterial';
 import { AsciiRenderer } from './shaders/AsciiRenderer';
 import useWindowSize from './hooks/useWindowSize';
