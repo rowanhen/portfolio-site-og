@@ -79,7 +79,7 @@ const PageText = () => {
           </div>
           <div className="page_01_title">Skills</div>
           <div className="page_01_detail">
-            React & JS Developer specialising in Front-End Development
+            Preferred Stack - React, TS & NodeJS
           </div>
         </div>
       </Section>
