@@ -19,7 +19,7 @@ const sectionOne = [
     className: 'page_01_title',
   },
   {
-    text: 'Software Engineer & Creative Coder',
+    text: 'Fullstack engineer & Creative Coder',
     className: 'page_01_detail',
   },
 ];
@@ -35,7 +35,7 @@ const sectionOneMobile = [
     className: 'page_01_title',
   },
   {
-    text: 'Software Engineer & Creative',
+    text: 'Fullstack engineer & Creative',
     className: 'page_01_detail',
   },
   {
